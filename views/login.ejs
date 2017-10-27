@@ -17,7 +17,7 @@
             div label{
               float: left;
             }
-            #zhuce{
+            #denglu{
             	width: 100%;
             	color: white;
             	background-color: red;
@@ -40,31 +40,20 @@
 				<form method="post" action="">
 					 <div class="form-group">
 					 	<label for="user_id">登录账号 :</label>
-                			<input type="text" class="form-control" id="user_id" name="user_id" placeholder="账号可以是中文，不能和别人重复">
-					 	</div>
-					 	<div class="form-group">
-					 	<label for="username">昵称 :</label>
-                			<input type="text" class="form-control" id="username" name="username" placeholder="可以和账号相同，可以是中文">
+                			<input type="text" class="form-control" id="user_id" name="user_id" placeholder="输入注册时设置的账号">
 					 	</div>
 					 	<div class="form-group">
 					 	<label for="password">登录密码 :</label>
-                			<input type="password" class="form-control" id="password" name="password" placeholder="至少要有6位密码，最多16位">
-					 	</div>
-					 	<div class="form-group">
-					 	<label for="password_sure">确认密码 :</label>
-                			<input type="password" class="form-control" id="password_sure" name="password_sure" placeholder="请再次输入密码，两次密码必须一致">
+                			<input type="password" class="form-control" id="password" name="password" placeholder="输入注册时设置的密码">
 					 	</div>
 					 	 <div class="checkbox">
 				                <label>
-				                    <input type="checkbox"> 我遵守注册规定
+				                    <input type="checkbox"> 自动登录
 				                </label>
 				            </div>
-					 	<button type="submit" id="zhuce" class="btn btn-default" >注册</button>
+					<button type="submit" id="denglu" class="btn btn-default" >注册</button>
 				</form>
-				<div class="alert alert-danger" role="alert" id="cuowukuang">
-            账户名已被占用，请更换！
-        </div>
-		</div>
+			</div>
 	</div>
 	<script src="/javascripts/jquery-3.2.1.min.js"></script>
 	<script src="/javascripts/bootstrap.min.js"></script>
