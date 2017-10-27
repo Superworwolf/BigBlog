@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/avatar/B.png">
+    <title>Register Bloger World</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/jumbotron.css" rel="stylesheet">
+    <style>
+            body{
+            	text-align: center;
+            }
+            div label{
+              float: left;
+            }
+            #zhuce{
+            	width: 100%;
+            	color: white;
+            	background-color: red;
+            	margin-top: 20px;
+            }
+            #cuowukuang{
+            	display: none;
+            	margin-top: 20px;
+            	transition: all 0.5;
+            }
+           .toast {
+			  width: 15rem;
+			  text-align: center;
+			  border-radius: 10px;
+			  position: absolute;
+			  left: 45%;
+			  margin-left: -100px;
+			  top: 40%;
+			  padding: 80px 0;
+			  background-color: black;
+			  opacity: .8;
+			  filter: alpha(opacity=20);
+			  color: white;
+			  font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+	<%include header.ejs %>
+	<div class="container">
+		 <div class="row col-lg-6">
+			<h1><%= Bigtitle %></h1>
+				<h3><%= Smalltitle %></h3>
+				
+				<form method="post" action="">
+					 <div class="form-group">
+					 	<label for="user_id">登录账号 :</label>
+                			<input type="text" class="form-control" id="user_id" name="user_id" placeholder="账号可以是中文，不能和别人重复">
+					 	</div>
+					 	<div class="form-group">
+					 	<label for="username">昵称 :</label>
+                			<input type="text" class="form-control" id="username" name="username" placeholder="可以和账号相同，可以是中文">
+					 	</div>
+					 	<div class="form-group">
+					 	<label for="password">登录密码 :</label>
+                			<input type="password" class="form-control" id="password" name="password" placeholder="至少要有6位密码，最多16位">
+					 	</div>
+					 	<div class="form-group">
+					 	<label for="password_sure">确认密码 :</label>
+                			<input type="password" class="form-control" id="password_sure" name="password_sure" placeholder="请再次输入密码，两次密码必须一致">
+					 	</div>
+					 	 <div class="checkbox">
+				                <label>
+				                    <input type="checkbox"> 我遵守注册规定
+				                </label>
+				            </div>
+					 	<button type="submit" id="zhuce" class="btn btn-default" >注册</button>
+				</form>
+				<div class="alert alert-danger" role="alert" id="cuowukuang">
+            账户名已被占用，请更换！
+        </div>
+		</div>
+	</div>
+	<script src="/javascripts/jquery-3.2.1.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/toast.js"></script>
+	<script>
+		$("input").focus(function(){$("#cuowukuang").fadeOut();});
+	</script>
+</body>
+</html>
