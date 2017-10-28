@@ -38,7 +38,7 @@ router.post('/register',function(req,res,next){
         		req.session.login = "1";
         		req.session.username = username;
         		console.log('1');//注册成功，写入session.
-        		res.redirect('/');
+        		res.redirect('/blogs');
         	   }
         	});
         	}else if(result.length != 0) {

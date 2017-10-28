@@ -15,21 +15,21 @@ router.post('/login',function(req,res,next){
 	let{user_id,password} = req.body;
 	 var jiamihou = md5(md5(password) + "233");
         User.findOne({"user_id":user_id},function(err,result){
-        	console.log(result);
+        	console.log(err);
         	  if (err) {
                 console.log("-5");
                 return;
             }
-        	if(result.length == 0) {
+        	if(result == null) {
         		console.log('-1')
-        		res.redirect('/login');
+        		res.redirect('/register');
                 return;
         	}
         	if (jiamihou == result.password) {
         		req.session.login = "1";
         		req.session.username = result.username;
         		console.log('1');//注册成功，写入session.
-        		res.redirect('/');
+        		res.redirect('/blogs');
 		   }else {
                 res.redirect("/login");  //密码错误
                 return;
