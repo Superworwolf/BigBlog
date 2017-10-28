@@ -18,13 +18,8 @@ router.post('/register',function(req,res,next){
         	if (err) {
         		 console.log('-4') //服务器错误
                 return;
-        	}
-        	if(result.lengh != 0) {
-        		console.log('-1')
-        		res.redirect('/register');
-                return;
-        	}
-        	if (!(/^[a-zA-Z0-9_-]{6,16}$/.test(password))) {
+        	}else if(result == null){
+        	           if (!(/^[a-zA-Z0-9_-]{6,16}$/.test(password))) {
             console.log('-2') //不符合规范
             return;
 		   }
@@ -45,7 +40,12 @@ router.post('/register',function(req,res,next){
         		console.log('1');//注册成功，写入session.
         		res.redirect('/');
         	   }
-        	})
+        	});
+        	}else if(result.length != 0) {
+        		console.log('-1')
+        		res.redirect('/register');
+                return;
+        	}        	
         });
 	 });
 

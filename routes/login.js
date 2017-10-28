@@ -20,7 +20,7 @@ router.post('/login',function(req,res,next){
                 console.log("-5");
                 return;
             }
-        	if(result.lengh == 0) {
+        	if(result.length == 0) {
         		console.log('-1')
         		res.redirect('/login');
                 return;
